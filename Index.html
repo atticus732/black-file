@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLACKFILE | Nothing Stays Buried</title>
+<style>
+:root{--bg:#080b09;--panel:#101713;--line:#26352b;--green:#9ad5a5;--muted:#8c9a90;--white:#e8eee9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
+header{padding:24px 6%;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:900;letter-spacing:4px}
+.status{color:var(--green);font-size:11px;letter-spacing:2px}
+main{max-width:1050px;margin:auto;padding:38px 6%}
+.kicker{color:var(--green);letter-spacing:3px;font-size:11px}
+h1{font-size:clamp(38px,8vw,68px);margin:15px 0}
+h1 span{color:var(--green)}
+.intro{color:var(--muted);line-height:1.7;max-width:650px}
+.search{width:100%;padding:16px;background:#0d130f;border:1px solid var(--line);color:white;margin:25px 0;font-size:16px}
+.section{display:flex;justify-content:space-between;align-items:center;margin:35px 0 15px}
+.section h2{font-size:16px;letter-spacing:2px}
+.tag{color:var(--green);font-size:11px}
+.file{background:var(--panel);border:1px solid var(--line);padding:22px;margin:14px 0}
+.file small{color:var(--green);letter-spacing:2px}
+.file h3{margin:12px 0;font-size:22px}
+.file p{color:var(--muted);line-height:1.6}
+.file a{color:var(--green);text-decoration:none;font-size:13px}
+.number{color:#506657;font-size:12px}
+footer{border-top:1px solid var(--line);padding:25px 6%;color:var(--muted);font-size:12px;line-height:1.7}
+button{background:var(--green);border:0;padding:12px 18px;font-weight:bold;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">BLACKFILE</div>
+<div class="status">● PUBLIC TERMINAL</div>
+</header>
+<main>
+<div class="kicker">INFORMATION WANTS TO BE FOUND</div>
+<h1>NOTHING STAYS <span>BURIED.</span></h1>
+<p class="intro">A public intelligence and discovery terminal. Follow the documents. Examine the connections. Decide what the evidence actually says.</p>
+
+<input class="search" id="search" placeholder="Search files, subjects, or topics..." oninput="filterFiles()">
+
+<div class="section">
+<h2>OPEN FILES</h2>
+<span class="tag">PUBLIC ACCESS</span>
+</div>
+
+<div id="files">
+<article class="file">
+<small>FILE 001 / SPACE & TECHNOLOGY</small>
+<h3>THE NEW SPACE RACE</h3>
+<p>Who is shaping America's return to the Moon? Explore the public contracts, competing companies, government decisions, and technology behind the next era of space exploration.</p>
+<div class="number">STATUS: RESEARCH OPEN</div>
+<p><a href="https://oig.nasa.gov/" target="_blank">NASA OFFICE OF INSPECTOR GENERAL ↗</a></p>
+<p><a href="https://www.gao.gov/" target="_blank">U.S. GOVERNMENT ACCOUNTABILITY OFFICE ↗</a></p>
+</article>
+
+<article class="file">
+<small>FILE 002 / COMING SOON</small>
+<h3>UNDER INVESTIGATION</h3>
+<p>A new public-records investigation is being assembled. Sources first. Conclusions later.</p>
+<div class="number">STATUS: UNOPENED</div>
+</article>
+
+<article class="file">
+<small>FILE 003 / COMING SOON</small>
+<h3>FOLLOW THE CONNECTIONS</h3>
+<p>Explore how people, organizations, contracts, and public records intersect.</p>
+<div class="number">STATUS: IN DEVELOPMENT</div>
+</article>
+</div>
+
+<div class="section">
+<h2>THE BLACKFILE STANDARD</h2>
+</div>
+<p class="intro">We distinguish documented facts from allegations, analysis, and speculation. Every serious claim should lead back to a source. Public information. Verifiable records. Open discovery.</p>
+</main>
+<footer>
+BLACKFILE // INDEPENDENT PUBLIC-RECORDS RESEARCH<br>
+Nothing stays buried. Not everything is what it seems.<br>
+This project is in development. Research is not an accusation.
+</footer>
+<script>
+function filterFiles(){
+const q=document.getElementById('search').value.toLowerCase();
+document.querySelectorAll('.file').forEach(file=>{
+file.style.display=file.innerText.toLowerCase().includes(q)?'block':'none';
+});
+}
+</script>
+</body>
+</html>
